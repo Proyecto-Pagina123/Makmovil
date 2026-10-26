@@ -2,3 +2,7 @@ button{
     width: 640px; height: 200px;
     font-size: 150px;
 }
+
+.espacio{
+    margin-bottom: 300px;
+}
