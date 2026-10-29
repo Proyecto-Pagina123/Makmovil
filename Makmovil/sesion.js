@@ -1,4 +1,5 @@
-async function iniciarSesion() {
+async function iniciarSesion() 
+{
 
     let usuario = document.getElementById("usuario").value;
     let password = document.getElementById("password").value;
