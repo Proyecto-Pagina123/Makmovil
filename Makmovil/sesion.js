@@ -4,14 +4,14 @@ async function iniciarSesion() {
     let password = document.getElementById("password").value;
 
     const { data, error } = await supabase
-        .from("usuarios")
+        .from("Usuarios")
         .select("*")
         .eq("Nombre", usuario)
         .eq("Contraseña", password);
 
     if (error) {
-        console.log(error);
-        alert("Error al consultar la base de datos");
+        console.error(error);
+        alert("Error al consultar Supabase");
         return;
     }
 

@@ -15,5 +15,19 @@
             <button onclick="iniciarSesion()">Iniciar</button>
         </center>
         <script src="sesion.js"></script>
+
+        <!-- Conexion a la base de datos bruh -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+        <script>
+            const supabaseUrl = "https://nyjquarbrqovdrzcwlfm.supabase.co";
+            const supabaseKey = "sb_publishable_zSTsvcEm8qTGF6UBN_BtZQ_2fLo9Btv";
+
+            const supabase = window.supabase.createClient(
+            supabaseUrl,
+            supabaseKey
+            );
+        </script>
+
     </body>
 </html>
