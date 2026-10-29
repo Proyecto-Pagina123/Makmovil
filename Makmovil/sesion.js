@@ -4,7 +4,7 @@ async function iniciarSesion()
     let usuario = document.getElementById("usuario").value;
     let password = document.getElementById("password").value;
 
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
         .from("Usuarios")
         .select("*")
         .eq("Nombre", usuario)

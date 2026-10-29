@@ -22,10 +22,9 @@
             const supabaseUrl = "https://nyjquarbrqovdrzcwlfm.supabase.co";
             const supabaseKey = "sb_publishable_zSTsvcEm8qTGF6UBN_BtZQ_2fLo9Btv";
 
-            const supabase = window.supabase.createClient(
-            supabaseUrl,
-            supabaseKey
-            );
+            const { createClient } = supabase;
+
+            const supabaseClient = createClient(supabaseUrl, supabaseKey);
         </script>
 
         <script src="sesion.js"></script>
