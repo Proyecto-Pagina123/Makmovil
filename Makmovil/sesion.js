@@ -10,9 +10,10 @@ async function iniciarSesion()
         .eq("Nombre", usuario)
         .eq("Contraseña", password);
 
+        console.log(data)
         console.log("DATA:", data);
         console.log("ERROR:", error);
-        
+     
     if (error) {
         console.error(error);
         alert("Error al consultar Supabase");
