@@ -21,6 +21,7 @@ async function iniciarSesion()
     }
 
     if (data.length > 0) {
+        localStorage.setItem("usuario", usuario);
         window.location.href = "Cuentas.html";
     } else {
         alert("Usuario o contraseña incorrectos");

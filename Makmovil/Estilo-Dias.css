@@ -10,6 +10,7 @@ th, td {
 th{
     height: 40px;
     font-size: 35px;
+    background-color: rgb(255, 209, 56);
 }
 
 button{
@@ -17,3 +18,20 @@ button{
     height: 75px;
     font-size: 25px;
 }
+
+.checks{
+    width: 40px;
+}
+
+.nochecks{
+    width: 350px;
+}
+
+.nochecks2{
+    width: 200px;
+}
+
+.box{
+    transform: scale(3);
+}
+
