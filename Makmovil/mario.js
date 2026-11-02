@@ -41,12 +41,14 @@ const mapa =
     sabado10: "libre-s10"
 };
 
-async function cargarReservas() 
+async function cargarReservas()
 {
-
     const { data, error } = await supabase
         .from("reservas")
         .select("*");
+
+    console.log("DATA:", data);
+    console.log("ERROR:", error);
 
     if (error) {
         console.error(error);
@@ -55,12 +57,17 @@ async function cargarReservas()
 
     data.forEach(reserva => {
 
+        console.log("Horario:", reserva.horario);
+        console.log("Usuario:", reserva.usuario);
+        console.log("Texto:", mapa[reserva.horario]);
+
         document.getElementById(
-        mapa[reserva.horario]
+            mapa[reserva.horario]
         ).textContent = reserva.usuario;
 
         document.getElementById(
-        reserva.horario).style.display = "none";
+            reserva.horario
+        ).style.display = "none";
 
     });
 }
