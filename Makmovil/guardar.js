@@ -5,22 +5,33 @@ const supabase = createClient(
     'sb_publishable_zSTsvcEm8qTGF6UBN_BtZQ_2fLo9Btv'
 );
 
+
 async function confirmar() {
 
     const usuario = localStorage.getItem("usuario");
 
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const checkboxesMarcados =
+        document.querySelectorAll(
+            'input[type="checkbox"]:checked'
+        );
 
-    for (const checkbox of checkboxes) {
+    for (const checkbox of checkboxesMarcados) {
 
-        await supabaseClient
+        const { error } = await supabaseClient
             .from("reservas")
             .insert({
                 horario: checkbox.id,
                 usuario: usuario
             });
 
+        if (error) {
+            console.error(error);
+            alert("Error al guardar la reserva");
+            return;
+        }
     }
+
+    alert("Reserva realizada correctamente");
 
     location.reload();
 }
