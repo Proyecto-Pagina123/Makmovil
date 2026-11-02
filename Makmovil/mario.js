@@ -1,4 +1,12 @@
-const mapa = {
+import { createClient } from 'https://esm.sh/@supabase/supabase-js'
+
+const supabase = createClient(
+    'https://nyjquarbrqovdrzcwlfm.supabase.co',
+    'sb_publishable_zSTsvcEm8qTGF6UBN_BtZQ_2fLo9Btv'
+);
+
+const mapa = 
+{
     lunes1: "libre-l1",
     martes1: "libre-m1",
 
@@ -36,7 +44,7 @@ const mapa = {
 async function cargarReservas() 
 {
 
-    const { data, error } = await supabaseClient
+    const { data, error } = await supabase
         .from("reservas")
         .select("*");
 

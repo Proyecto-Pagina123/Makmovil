@@ -6,7 +6,8 @@ const supabase = createClient(
 );
 
 
-async function confirmar() {
+async function confirmar() 
+{
 
     const usuario = localStorage.getItem("usuario");
 
@@ -17,7 +18,7 @@ async function confirmar() {
 
     for (const checkbox of checkboxesMarcados) {
 
-        const { error } = await supabaseClient
+        const { error } = await supabase
             .from("reservas")
             .insert({
                 horario: checkbox.id,
@@ -35,3 +36,5 @@ async function confirmar() {
 
     location.reload();
 }
+
+window.confirmar = confirmar;
