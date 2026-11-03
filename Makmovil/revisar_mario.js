@@ -52,8 +52,8 @@ async function cargarReservas() {
             );
 
         if (texto) {
-            texto.textContent =
-                reserva.usuario;
+            texto.textContent = reserva.usuario;
+            texto.style.color = "#BF1B36";
         }
 
     });
