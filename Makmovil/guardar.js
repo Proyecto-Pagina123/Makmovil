@@ -34,8 +34,6 @@ async function confirmar()
 
     alert("Reserva realizada correctamente");
 
-    alert("Reserva realizada correctamente");
-
     // Cerrar sesión
     localStorage.removeItem("usuario");
 

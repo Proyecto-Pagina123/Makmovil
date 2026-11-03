@@ -31,7 +31,8 @@ button{
     width: 200px;
 }
 
-.box{
+input{
+    margin-right: 4px;
     transform: scale(3);
 }
 
