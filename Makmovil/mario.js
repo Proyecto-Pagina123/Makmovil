@@ -59,16 +59,25 @@ async function cargarReservas()
 
         console.log("Horario:", reserva.horario);
         console.log("Usuario:", reserva.usuario);
-        console.log("Texto:", mapa[reserva.horario]);
 
-        console.log("Horario:", reserva.horario);
-        console.log("Mapa:", mapa[reserva.horario]);
+        const texto = document.getElementById(
+          mapa[reserva.horario]
+        );
 
-        document.getElementById(
-            reserva.horario
-        ).style.display = "none";
+        if (texto) {
+            texto.textContent = reserva.usuario;
+        }
+
+        const checkbox = document.getElementById(
+        reserva.horario
+        );
+
+        if (checkbox) {
+            checkbox.style.display = "none";
+        }
 
     });
+
 }
 
 cargarReservas();
