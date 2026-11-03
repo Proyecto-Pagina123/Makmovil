@@ -66,6 +66,7 @@ async function cargarReservas()
 
         if (texto) {
             texto.textContent = reserva.usuario;
+            texto.style.color = "#BF1B36";
         }
 
         const checkbox = document.getElementById(
