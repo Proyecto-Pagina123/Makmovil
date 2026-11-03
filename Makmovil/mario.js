@@ -61,9 +61,8 @@ async function cargarReservas()
         console.log("Usuario:", reserva.usuario);
         console.log("Texto:", mapa[reserva.horario]);
 
-        document.getElementById(
-            mapa[reserva.horario]
-        ).textContent = reserva.usuario;
+        console.log("Horario:", reserva.horario);
+        console.log("Mapa:", mapa[reserva.horario]);
 
         document.getElementById(
             reserva.horario
