@@ -9,7 +9,7 @@ async function mostrarPosicion() {
 
     const usuario = localStorage.getItem("usuario");
 
-    const { data } = await supabaseClient
+    const { data } = await supabase
         .from("cola_espera")
         .select("*")
         .order("fecha");
@@ -23,7 +23,7 @@ async function mostrarPosicion() {
 
 mostrarPosicion();
 
-supabaseClient
+supabase
   .channel('sesiones')
   .on(
     'postgres_changes',
@@ -36,7 +36,7 @@ supabaseClient
 
       const usuario = localStorage.getItem("usuario");
 
-      const { data: cola } = await supabaseClient
+      const { data: cola } = await supabase
         .from("cola_espera")
         .select("*")
         .order("fecha")
@@ -45,11 +45,11 @@ supabaseClient
       if (cola.length > 0 &&
           cola[0].usuario === usuario) {
 
-        await supabaseClient
+        await supabase
           .from("sesion_activa")
           .insert({ usuario });
 
-        await supabaseClient
+        await supabase
           .from("cola_espera")
           .delete()
           .eq("usuario", usuario);
@@ -58,4 +58,6 @@ supabaseClient
       }
     }
   )
-  .subscribe();
+  .subscribe((status) => {
+      console.log("Realtime:", status);
+  });
