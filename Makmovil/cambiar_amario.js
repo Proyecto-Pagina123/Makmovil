@@ -37,4 +37,4 @@ async function cambiar_mario()
     window.location.href = "Mario.html";
 }
 
-window.confirmar = confirmar;
+window.confirmar = cambiar_mario;

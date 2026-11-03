@@ -37,4 +37,4 @@ async function cambiar_ruth()
     window.location.href = "Ruth.html";
 }
 
-window.confirmar = confirmar;
+window.confirmar = cambiar_ruth;
