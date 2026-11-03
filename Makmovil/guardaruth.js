@@ -35,6 +35,11 @@ async function confirmar()
     alert("Reserva realizada correctamente");
 
     // Cerrar sesión
+    await supabase
+        .from("sesion_activa")
+        .delete()
+        .eq("usuario", usuario);
+
     localStorage.removeItem("usuario");
 
     window.location.href = "Confirmacion.html";
