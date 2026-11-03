@@ -34,7 +34,12 @@ async function confirmar()
 
     alert("Reserva realizada correctamente");
 
-    location.reload();
+    alert("Reserva realizada correctamente");
+
+    // Cerrar sesión
+    localStorage.removeItem("usuario");
+
+    window.location.href = "Confirmacion.html";
 }
 
 window.confirmar = confirmar;
