@@ -15,7 +15,7 @@ async function mostrarPosicion() {
         .order("fecha");
 
     const personasAntes =
-        data.findIndex(x => x.usuario === usuario);
+        data.findIndex(x => x.usuario === usuario) + 1;
 
     document.getElementById("fila").textContent =
         personasAntes;
@@ -43,7 +43,7 @@ supabase
         .limit(1);
 
       if (cola.length > 0 &&
-          cola[1].usuario === usuario) {
+          cola[0].usuario === usuario) {
 
         await supabase
           .from("sesion_activa")
