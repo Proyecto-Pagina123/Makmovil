@@ -43,7 +43,7 @@ supabase
         .limit(1);
 
       if (cola.length > 0 &&
-          cola[0].usuario === usuario) {
+          cola[1].usuario === usuario) {
 
         await supabase
           .from("sesion_activa")
